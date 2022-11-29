@@ -54,4 +54,17 @@ router.put('/:estadoId', async function(req, res) {
     }
 });
 
+router.get('/:estadoId', async function(req, res) {
+    try {
+        const estado = await Estado.findById(req.params.estadoId);
+        if (!estado) {
+            return res.status(404).send('Inventario no existe');
+        }
+        res.send(estado);
+    } catch(error) {
+        console.log(error);
+        res.status(500).send('Ocurrió un error al modificar estados');
+    }
+});
+
 module.exports = router;
