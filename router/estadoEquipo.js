@@ -56,11 +56,11 @@ router.put('/:estadoId', async function(req, res) {
 
 router.get('/:estadoId', async function(req, res) {
     try {
-        const estado = await Estado.findById(req.params.estadoId);
-        if (!estado) {
+        const estado-equipo = await Estado-equipo.findById(req.params.estadoId);
+        if (!estado-equipo) {
             return res.status(404).send('Inventario no existe');
         }
-        res.send(estado);
+        res.send(estado-equipo);
     } catch(error) {
         console.log(error);
         res.status(500).send('Ocurrió un error al modificar estados');
